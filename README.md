@@ -1,1 +1,3 @@
-# MCP-SNIPPETS
+# MCP-Snippets
+
+U can skid all of my snippets bruh...
