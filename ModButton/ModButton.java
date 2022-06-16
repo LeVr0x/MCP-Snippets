@@ -1,4 +1,4 @@
-package pl.h00p03.client.utils;
+
 
 import java.awt.Color;
 import java.io.IOException;
@@ -8,8 +8,6 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import pl.h00p03.client.mods.Mod;
-import pl.h00p03.client.utils.animations.Animation;
-import pl.h00p03.client.utils.animations.util.Easings;
 import pl.h00p03.client.utils.font.FontUtil;
 
 public class ModButton {
