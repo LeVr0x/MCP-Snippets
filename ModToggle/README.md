@@ -36,7 +36,7 @@ PASTE CODE:
 
 ### 6. IN YOURS SHUTDOWN METHOD...
 ```java
-  try {
+  		try {
 			for (Mod mod : mods) {
 				ModToggle.saveEnabled(mod);
 			}
