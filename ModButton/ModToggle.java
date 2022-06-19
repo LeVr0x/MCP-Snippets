@@ -1,4 +1,4 @@
-package pl.h00p03.client.utils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,10 +27,9 @@ public class ModToggle {
 
 	public static void saveEnabled(Mod... mods) throws IOException {
 		for(Mod mod : mods) {
-			// Opcjonalne
 			System.out.println("Saving mod: " + mod.getClass().getSimpleName().split("Mod")[1]);
 
-			File file = new File(new File(mc.mcDataDir, "Hussars Client" + File.separator + File.separator + "Mods" + File.separator + mod.getName()), "enabled.json");
+			File file = new File(new File(mc.mcDataDir, "Folder" + File.separator + File.separator + "Mods" + File.separator + mod.getName()), "enabled.json");
 			file.getParentFile().mkdirs();
 			file.createNewFile();
 			boolean isEnabled = mod.isEnabled;
@@ -41,10 +40,9 @@ public class ModToggle {
 	}
 	public static void loadEnabled(Mod... mods) throws FileNotFoundException {
 		for(Mod mod : mods) {
-			// Opcjonalne
 			System.out.println("Loading mod: " + mod.getName());
 
-			File file = new File(new File(mc.mcDataDir, "Hussars Client" + File.separator + File.separator + "Mods" + File.separator + mod.getName()), "enabled.json");
+			File file = new File(new File(mc.mcDataDir, "Folder" + File.separator + File.separator + "Mods" + File.separator + mod.getName()), "enabled.json");
 			mod.isEnabled = gson.fromJson(new FileReader(file), boolean.class);
 		}
 	}
@@ -61,42 +59,4 @@ public class ModToggle {
 		}
 		return b;
 	}
-
-	// Zapisywanie kosmetykĂłw
-/*
-	public static void saveCosmetics(CosmeticBase... cosmetics) throws IOException {
-		for (CosmeticBase cosmetic : cosmetics) {
-			String name = cosmetic.getClass().getSimpleName().replaceFirst("Cosmetic", "");
-			File file = new File(Minecraft.getMinecraft().mcDataDir, "Guardly Client"  +File.separator +  "Cosmetics" + File.separator + name + ".json");
-			Map<String, Object> cosmeticsMap = new HashMap<>();
-			cosmeticsMap.put("name", name);
-			cosmeticsMap.put("enabled", cosmetic.isEnabled);
-
-			file.getParentFile().mkdirs();
-			file.createNewFile();
-			FileWriter writer = new FileWriter(file);
-			writer.write(new GsonBuilder().setPrettyPrinting().create().toJson(cosmeticsMap));
-			writer.close();
-		}
-
-	}
-	// Ĺ�adowanie kometykĂłw
-	public static void loadCosmetics(CosmeticBase... cosmetics) throws IOException {
-		for(CosmeticBase cosmetic : cosmetics) {
-			// trzeba to kiedys zatapic nazwa w konstruktorze
-			String name = cosmetic.getClass().getSimpleName().replaceFirst("Cosmetic", "");
-
-			if(new File(Minecraft.getMinecraft().mcDataDir, "Guardly Client"  +File.separator +  "Cosmetics" + File.separator + name + ".json").exists()){
-
-				FileReader reader = new FileReader(new File(Minecraft.getMinecraft().mcDataDir, "Cosmetics" + File.separator + name + ".json"));
-				Gson gson = new Gson();
-				Map<String,Object> cosmeticsMap = gson.fromJson(reader, HashMap.class);
-
-				cosmetic.isEnabled = Boolean.parseBoolean(String.valueOf(cosmeticsMap.get("enabled")));
-			}
-
-
-		}
-	}
-	*/
 }
