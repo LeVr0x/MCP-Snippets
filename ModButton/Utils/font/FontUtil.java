@@ -1,4 +1,3 @@
-package pl.h00p03.client.utils.font;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
