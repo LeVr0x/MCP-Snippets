@@ -1,23 +1,23 @@
 # HOW TO USE 
 
-###1. SKID CODE
+### 1. SKID CODE
 
-###2. CREATE ARRAYLIST IN YOURS MODINSTANCES -_-
+### 2. CREATE ARRAYLIST IN YOURS MODINSTANCES -_-
 ```java
   public static ArrayList<Mod> mods = new ArrayList<>();
 ```
 
-###3. IN REGISTER METHOD ADD 
+### 3. IN REGISTER METHOD ADD 
 ```java
   mods.add(yours_mod)
 ```
 
-###4. GO TO YOURS MAIN CLASS AND ADD
+### 4. GO TO YOURS MAIN CLASS AND ADD
 ```java
   public List<Mod> mods;
 ```
 
-###5. IN YOURS START METHOD AFTER: 
+### 5. IN YOURS START METHOD AFTER: 
 ```java
   ModInstances.register(hudManager);
 ```
@@ -34,7 +34,7 @@ PASTE CODE:
 		}
 ```
 
-###6. IN YOURS SHUTDOWN METHOD...
+### 6. IN YOURS SHUTDOWN METHOD...
 ```java
   try {
 			for (Mod mod : mods) {
@@ -45,4 +45,4 @@ PASTE CODE:
 		}
 ```
 
-###7. CONGRATULATIONS!!! NOW U ARE PROFFESIONAL SKID!!! -_-
+### 7. CONGRATULATIONS!!! NOW U ARE PROFFESIONAL SKID!!! -_-
