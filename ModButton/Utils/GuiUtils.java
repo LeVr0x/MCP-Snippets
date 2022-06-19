@@ -1,4 +1,3 @@
-package pl.h00p03.client.utils;
 
 /*
 Made using Shoroa_'s Rounded Utils and CB's player head
